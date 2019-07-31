@@ -120,6 +120,13 @@ app.get("/scrape", function(req, res) {
       })
   
   });
+
+  app.post("/clear", function(req, res) {
+
+    db.Article.collection.drop();
+    db.Note.collection.drop();
+    res.end();
+  });
   
   // Route for grabbing a specific Article by id, populate it with it's note
   app.get("/articles/:id", function(req, res) {

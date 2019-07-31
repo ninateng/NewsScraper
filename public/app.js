@@ -18,7 +18,8 @@ $.getJSON("/articles", function(data) {
   $("#delete").on("click", function() {
 
     $("#articles").remove();
-    $("#notes").remove();
+    // $("#notes").remove();
+    $.post("/clear");
 
   });
           //---------delete------------
